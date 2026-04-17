@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tts-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: tts-app
+  template:
+    metadata:
+      labels:
+        app: tts-app
+    spec:
+      containers:
+      - name: tts-app
+        image: arshen00r/tts-app:latest
+        ports:
+        - containerPort: 80
